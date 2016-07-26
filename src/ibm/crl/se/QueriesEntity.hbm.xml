@@ -1,0 +1,45 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+
+    <class name="ibm.crl.se.QueriesEntity" table="queries" schema="stack_exchange_querys">
+        <id name="id">
+            <column name="id" sql-type="int(11)"/>
+        </id>
+        <property name="title">
+            <column name="title" sql-type="text" not-null="true"/>
+        </property>
+        <property name="description">
+            <column name="description" sql-type="text" not-null="true"/>
+        </property>
+        <property name="starsCount">
+            <column name="stars_count" sql-type="int(11)" not-null="true"/>
+        </property>
+        <property name="viewsCount">
+            <column name="views_count" sql-type="int(11)" not-null="true"/>
+        </property>
+        <property name="queryStatementsHtml">
+            <column name="query_statements_html" sql-type="text" not-null="true"/>
+        </property>
+        <property name="queryStatements">
+            <column name="query_statements" sql-type="text" not-null="true"/>
+        </property>
+        <property name="createTime">
+            <column name="create_time" sql-type="datetime" not-null="true"/>
+        </property>
+        <property name="authorId">
+            <column name="author_id" sql-type="int(11)" not-null="true"/>
+        </property>
+        <property name="authorName">
+            <column name="author_name" sql-type="varchar(50)" length="50" not-null="true"/>
+        </property>
+        <property name="arguments">
+            <column name="arguments" sql-type="text" not-null="true"/>
+        </property>
+        <property name="crawledTime">
+            <column name="crawled_time" sql-type="timestamp"/>
+        </property>
+    </class>
+</hibernate-mapping>

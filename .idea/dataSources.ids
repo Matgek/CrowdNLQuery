@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component name="dataSourceStorage">
+  <data-source name="MySQL -StackExchange" uuid="a2354dc0-9407-4eff-87eb-0956c0dc985b">
+    <database-info product="MySQL" version="5.6.30-0ubuntu0.14.04.1" jdbc-version="4.0" driver-name="MySQL Connector Java" driver-version="mysql-connector-java-5.1.35 ( Revision: 5fb9c5849535c13917c2cf9baaece6ef9693ef27 )">
+      <extra-name-characters>#@</extra-name-characters>
+      <identifier-quote-string>`</identifier-quote-string>
+    </database-info>
+    <case-sensitivity plain-identifiers="exact" quoted-identifiers="exact"/>
+    <database-model serializer="dbm" rdbms="MYSQL" format-version="2.6">
+      <schema id="1" name="stack_exchange_querys">
+        <visible>1</visible>
+      </schema>
+      <schema id="2" name="core"/>
+      <schema id="3" name="information_schema"/>
+      <schema id="4" name="mysql"/>
+      <schema id="5" name="performance_schema"/>
+      <table id="6" parent="1" name="queries"/>
+      <column id="7" parent="6" name="id">
+        <mandatory>1</mandatory>
+        <data-type>int(11)|0</data-type>
+      </column>
+      <column id="8" parent="6" name="title">
+        <data-type>text|0</data-type>
+      </column>
+      <column id="9" parent="6" name="description">
+        <data-type>text|0</data-type>
+      </column>
+      <column id="10" parent="6" name="stars_count">
+        <data-type>int(11)|0</data-type>
+      </column>
+      <column id="11" parent="6" name="views_count">
+        <data-type>int(11)|0</data-type>
+      </column>
+      <column id="12" parent="6" name="query_statements_html">
+        <data-type>text|0</data-type>
+      </column>
+      <column id="13" parent="6" name="query_statements">
+        <data-type>text|0</data-type>
+      </column>
+      <column id="14" parent="6" name="create_time">
+        <data-type>datetime|0</data-type>
+      </column>
+      <column id="15" parent="6" name="author_id">
+        <data-type>int(11)|0</data-type>
+      </column>
+      <column id="16" parent="6" name="author_name">
+        <data-type>varchar(50)|0</data-type>
+      </column>
+      <column id="17" parent="6" name="arguments">
+        <data-type>text|0</data-type>
+      </column>
+      <column id="18" parent="6" name="crawled_time">
+        <mandatory>1</mandatory>
+        <data-type>timestamp|0</data-type>
+        <default-expression>CURRENT_TIMESTAMP</default-expression>
+      </column>
+      <key id="19" parent="6" name="PRIMARY">
+        <columns>id</columns>
+        <primary>1</primary>
+      </key>
+    </database-model>
+  </data-source>
+</component>
