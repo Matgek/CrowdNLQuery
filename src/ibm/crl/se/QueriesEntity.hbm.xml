@@ -1,13 +1,16 @@
 <?xml version='1.0' encoding='utf-8'?>
 <!DOCTYPE hibernate-mapping PUBLIC
-        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
-        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
 <hibernate-mapping>
 
     <class name="ibm.crl.se.QueriesEntity" table="queries" schema="stack_exchange_querys">
         <id name="id">
             <column name="id" sql-type="int(11)"/>
         </id>
+        <property name="url">
+            <column name="url" sql-type="text" not-null="true"/>
+        </property>
         <property name="title">
             <column name="title" sql-type="text" not-null="true"/>
         </property>

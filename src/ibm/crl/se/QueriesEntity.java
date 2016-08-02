@@ -4,23 +4,24 @@ import javax.persistence.*;
 import java.sql.Timestamp;
 
 /**
- * Created by ADMINIBM on 7/25/2016.
+ * Created by ADMINIBM on 7/26/2016.
  */
 @Entity
 @Table(name = "queries", schema = "stack_exchange_querys", catalog = "")
 public class QueriesEntity {
     private int id;
+    private String url;
     private String title;
     private String description;
     private Integer starsCount;
     private Integer viewsCount;
+    private String queryStatementsHtml;
     private String queryStatements;
     private Timestamp createTime;
     private Integer authorId;
     private String authorName;
     private String arguments;
     private Timestamp crawledTime;
-    private String queryStatementsHtml;
 
     @Id
     @Column(name = "id", nullable = false)
@@ -30,6 +31,16 @@ public class QueriesEntity {
 
     public void setId(int id) {
         this.id = id;
+    }
+
+    @Basic
+    @Column(name = "url", nullable = true, length = -1)
+    public String getUrl() {
+        return url;
+    }
+
+    public void setUrl(String url) {
+        this.url = url;
     }
 
     @Basic
@@ -70,6 +81,16 @@ public class QueriesEntity {
 
     public void setViewsCount(Integer viewsCount) {
         this.viewsCount = viewsCount;
+    }
+
+    @Basic
+    @Column(name = "query_statements_html", nullable = true, length = -1)
+    public String getQueryStatementsHtml() {
+        return queryStatementsHtml;
+    }
+
+    public void setQueryStatementsHtml(String queryStatementsHtml) {
+        this.queryStatementsHtml = queryStatementsHtml;
     }
 
     @Basic
@@ -140,10 +161,13 @@ public class QueriesEntity {
         QueriesEntity that = (QueriesEntity) o;
 
         if (id != that.id) return false;
+        if (url != null ? !url.equals(that.url) : that.url != null) return false;
         if (title != null ? !title.equals(that.title) : that.title != null) return false;
         if (description != null ? !description.equals(that.description) : that.description != null) return false;
         if (starsCount != null ? !starsCount.equals(that.starsCount) : that.starsCount != null) return false;
         if (viewsCount != null ? !viewsCount.equals(that.viewsCount) : that.viewsCount != null) return false;
+        if (queryStatementsHtml != null ? !queryStatementsHtml.equals(that.queryStatementsHtml) : that.queryStatementsHtml != null)
+            return false;
         if (queryStatements != null ? !queryStatements.equals(that.queryStatements) : that.queryStatements != null)
             return false;
         if (createTime != null ? !createTime.equals(that.createTime) : that.createTime != null) return false;
@@ -158,10 +182,12 @@ public class QueriesEntity {
     @Override
     public int hashCode() {
         int result = id;
+        result = 31 * result + (url != null ? url.hashCode() : 0);
         result = 31 * result + (title != null ? title.hashCode() : 0);
         result = 31 * result + (description != null ? description.hashCode() : 0);
         result = 31 * result + (starsCount != null ? starsCount.hashCode() : 0);
         result = 31 * result + (viewsCount != null ? viewsCount.hashCode() : 0);
+        result = 31 * result + (queryStatementsHtml != null ? queryStatementsHtml.hashCode() : 0);
         result = 31 * result + (queryStatements != null ? queryStatements.hashCode() : 0);
         result = 31 * result + (createTime != null ? createTime.hashCode() : 0);
         result = 31 * result + (authorId != null ? authorId.hashCode() : 0);
@@ -169,15 +195,5 @@ public class QueriesEntity {
         result = 31 * result + (arguments != null ? arguments.hashCode() : 0);
         result = 31 * result + (crawledTime != null ? crawledTime.hashCode() : 0);
         return result;
-    }
-
-    @Basic
-    @Column(name = "query_statements_html", nullable = true, length = -1)
-    public String getQueryStatementsHtml() {
-        return queryStatementsHtml;
-    }
-
-    public void setQueryStatementsHtml(String queryStatementsHtml) {
-        this.queryStatementsHtml = queryStatementsHtml;
     }
 }

@@ -1,16 +1,16 @@
 <?xml version='1.0' encoding='utf-8'?>
 <!DOCTYPE hibernate-configuration PUBLIC
-        "-//Hibernate/Hibernate Configuration DTD//EN"
-        "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+    "-//Hibernate/Hibernate Configuration DTD//EN"
+    "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
 <hibernate-configuration>
-    <session-factory>
-        <property name="connection.url">
-            jdbc:mysql://9.192.211.203:3306/stack_exchange_querys?user=root,password=cis-51355517
-        </property>
-        <property name="connection.driver_class">com.mysql.jdbc.Driver</property>
-        <mapping class="ibm.crl.se.QueriesEntity"/>
-        <mapping resource="ibm/crl/se/QueriesEntity.hbm.xml"/>
-        <!-- DB schema will be updated if needed -->
-        <!-- <property name="hbm2ddl.auto">update</property> -->
-    </session-factory>
+  <session-factory>
+    <property name="connection.url">
+        jdbc:mysql://9.192.211.203:3306/stack_exchange_querys?user=root,password=cis-51355517
+    </property>
+    <property name="connection.driver_class">com.mysql.jdbc.Driver</property>
+      <mapping class="ibm.crl.se.QueriesEntity"/>
+      <mapping resource="ibm/crl/se/QueriesEntity.hbm.xml"/>
+      <!-- DB schema will be updated if needed -->
+    <!-- <property name="hbm2ddl.auto">update</property> -->
+  </session-factory>
 </hibernate-configuration>
