@@ -19,42 +19,45 @@
         <mandatory>1</mandatory>
         <data-type>int(11)|0</data-type>
       </column>
-      <column id="8" parent="6" name="title">
+      <column id="8" parent="6" name="url">
         <data-type>text|0</data-type>
       </column>
-      <column id="9" parent="6" name="description">
+      <column id="9" parent="6" name="title">
         <data-type>text|0</data-type>
       </column>
-      <column id="10" parent="6" name="stars_count">
+      <column id="10" parent="6" name="description">
+        <data-type>text|0</data-type>
+      </column>
+      <column id="11" parent="6" name="stars_count">
         <data-type>int(11)|0</data-type>
       </column>
-      <column id="11" parent="6" name="views_count">
+      <column id="12" parent="6" name="views_count">
         <data-type>int(11)|0</data-type>
       </column>
-      <column id="12" parent="6" name="query_statements_html">
+      <column id="13" parent="6" name="query_statements_html">
         <data-type>text|0</data-type>
       </column>
-      <column id="13" parent="6" name="query_statements">
+      <column id="14" parent="6" name="query_statements">
         <data-type>text|0</data-type>
       </column>
-      <column id="14" parent="6" name="create_time">
+      <column id="15" parent="6" name="create_time">
         <data-type>datetime|0</data-type>
       </column>
-      <column id="15" parent="6" name="author_id">
+      <column id="16" parent="6" name="author_id">
         <data-type>int(11)|0</data-type>
       </column>
-      <column id="16" parent="6" name="author_name">
+      <column id="17" parent="6" name="author_name">
         <data-type>varchar(50)|0</data-type>
       </column>
-      <column id="17" parent="6" name="arguments">
+      <column id="18" parent="6" name="arguments">
         <data-type>text|0</data-type>
       </column>
-      <column id="18" parent="6" name="crawled_time">
+      <column id="19" parent="6" name="crawled_time">
         <mandatory>1</mandatory>
         <data-type>timestamp|0</data-type>
         <default-expression>CURRENT_TIMESTAMP</default-expression>
       </column>
-      <key id="19" parent="6" name="PRIMARY">
+      <key id="20" parent="6" name="PRIMARY">
         <columns>id</columns>
         <primary>1</primary>
       </key>
