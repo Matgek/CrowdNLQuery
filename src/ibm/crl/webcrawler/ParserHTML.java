@@ -130,11 +130,12 @@ public class ParserHTML {
         String queryStr = "from QueriesEntity where description = null";
         Query query = session.createQuery(queryStr);
         List<QueriesEntity> queriesList = query.list();
-        Transaction trans = session.beginTransaction();
         int i =0;
+        Transaction trans = null;
         for (QueriesEntity queriesEntity : queriesList){
             try {
                 Thread.sleep(2000);
+                trans = session.beginTransaction();
                 String url = queriesEntity.getUrl();
                 Parser parser = new Parser(url);
                 parser.setEncoding("utf-8");
@@ -177,17 +178,18 @@ public class ParserHTML {
                 queriesEntity.setAuthorName(author_name);
 
                 session.saveOrUpdate(queriesEntity);
-                i ++;
-                System.out.println("saved " + i + "th query!");
             } catch (ParserException e) {
                 e.printStackTrace();
             } catch (InterruptedException e){
                 e.printStackTrace();
             } catch (Exception e){
                 e.printStackTrace();
+            } finally {
+                trans.commit();
+                i++;
+                System.out.println("saved " + i + "th query!");
             }
         }
-        trans.commit();
         close();
     }
 
